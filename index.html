@@ -21,7 +21,7 @@
 
                 <div class="input-group">
                     <span class="input-group-addon">Szukaj: </span>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" ng-model="wyszukiwarka">
                 </div>
 
                 <div class="table-responsive">
@@ -36,7 +36,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr ng-repeat="druzyna in druzyny">
+                            <tr ng-repeat="druzyna in druzyny | filter : wyszukiwarka">
                                 <td>{{druzyna.FIELD1}}</td>
                                 <td>{{druzyna.FIELD2}}</td>
                                 <td>{{druzyna.FIELD9}}</td>
@@ -54,7 +54,7 @@
     <script>
         var app = angular.module('tabelaLaLiga', [] );
 
-        app.controller( 'kontrolerTabeli', ['$scope', function ($scope) {
+        app.controller( 'kontrolerTabeli', ['$scope', '$filter', function ($scope, $filter) {
             $scope.druzyny = [
                 {
                     "FIELD1": "Barcelona",
@@ -132,12 +132,12 @@
                     "FIELD9": "26"
                 },
                 {
-                    "FIELD1": "16AlavésALV",
+                    "FIELD1": "AlavésALV",
                     "FIELD2": "23",
                     "FIELD9": "25"
                 },
                 {
-                    "FIELD1": "17LevanteLEV",
+                    "FIELD1": "LevanteLEV",
                     "FIELD2": "23",
                     "FIELD9": "20"
                 },
