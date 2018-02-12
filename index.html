@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Primera Division</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+        .center-block {
+            float: center;
+        }
+    </style>
+</head>
+
+<body ng-app="tabelaLaLiga">
+
+
+    <div class="container" ng-controller="kontrolerTabeli">
+        <div class="row">
+            <div class="col-sm-8 center-block" style="background: #f00303; color:rgb(255, 232, 25);">
+                <h1 class="text-center">Tabela LaLiga</h1>
+
+                <div class="input-group">
+                    <span class="input-group-addon">Szukaj: </span>
+                    <input type="text" class="form-control">
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th ng-repeat="naglowek in [
+                            'Druzyna', 'Miejsce', 'Punkty'
+                            ]">
+                                    {{naglowek}}
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="druzyna in druzyny">
+                                <td>{{druzyna.FIELD1}}</td>
+                                <td>{{druzyna.FIELD2}}</td>
+                                <td>{{druzyna.FIELD9}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="js/angular.min.js"></script>
+
+    <script>
+        var app = angular.module('tabelaLaLiga', [] );
+
+        app.controller( 'kontrolerTabeli', ['$scope', function ($scope) {
+            $scope.druzyny = [
+                {
+                    "FIELD1": "Barcelona",
+                    "FIELD2": "23",
+                    "FIELD9": "59"
+                },
+                {
+                    "FIELD1": "Atletico Madrid",
+                    "FIELD2": "23",
+                    "FIELD9": "52"
+                },
+                {
+                    "FIELD1": "Valencia",
+                    "FIELD2": "23",
+                    "FIELD9": "43"
+                },
+                {
+                    "FIELD1": "Real Madrid",
+                    "FIELD2": "22",
+                    "FIELD9": "42"
+                },
+                {
+                    "FIELD1": "Villarreal",
+                    "FIELD2": "23",
+                    "FIELD9": "37"
+                },
+                {
+                    "FIELD1": "Sevilla FC",
+                    "FIELD2": "23",
+                    "FIELD9": "36"
+                },
+                {
+                    "FIELD1": "Eibar",
+                    "FIELD2": "23",
+                    "FIELD9": "35"
+                },
+                {
+                    "FIELD1": "Celta Vigo",
+                    "FIELD2": "23",
+                    "FIELD9": "32"
+                },
+                {
+                    "FIELD1": "Girona",
+                    "FIELD2": "23",
+                    "FIELD9": "31"
+                },
+                {
+                    "FIELD1": "Getafe",
+                    "FIELD2": "23",
+                    "FIELD9": "30"
+                },
+                {
+                    "FIELD1": "Real Betis",
+                    "FIELD2": "22",
+                    "FIELD9": "30"
+                },
+                {
+                    "FIELD1": "Leganes",
+                    "FIELD2": "22",
+                    "FIELD9": "29"
+                },
+                {
+                    "FIELD1": "Athletic Bilbao",
+                    "FIELD2": "23",
+                    "FIELD9": "28"
+                },
+                {
+                    "FIELD1": "Real Sociedad",
+                    "FIELD2": "23",
+                    "FIELD9": "26"
+                },
+                {
+                    "FIELD1": "Espanyol",
+                    "FIELD2": "23",
+                    "FIELD9": "26"
+                },
+                {
+                    "FIELD1": "16AlavésALV",
+                    "FIELD2": "23",
+                    "FIELD9": "25"
+                },
+                {
+                    "FIELD1": "17LevanteLEV",
+                    "FIELD2": "23",
+                    "FIELD9": "20"
+                },
+                {
+                    "FIELD1": "Las Palmas",
+                    "FIELD2": "23",
+                    "FIELD9": "18"
+                },
+                {
+                    "FIELD1": "Deportivo La Coruña",
+                    "FIELD2": "22",
+                    "FIELD9": "17"
+                },
+                {
+                    "FIELD1": "Málaga",
+                    "FIELD2": "23",
+                    "FIELD9": "13"
+                }
+            ];
+        }]);
+
+    </script>
+
+    <script src="js/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+
+</html>
